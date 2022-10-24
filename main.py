@@ -14,9 +14,12 @@ class Student:
     def to_study(self):
         print("Time to study")
         self.progress += 0.5
-        self.gladness -= 3
+        self.gladness -= 1
+        self.academic_performance += 0.4
+
+    def to_job(self):
+        print("Time for work")
         self.money += 600
-        self.academic_performance = 0.4
 
     def to_sleep(self):
         print("I will sleep")
@@ -39,14 +42,11 @@ class Student:
         elif self.progress >= 8:
             print("Passed externally...")
             self.alive = False
-        elif self.money <= 0:
+        elif self.money < 2:
             print("Enough money")
             self.alive = True
         elif self.academic_performance < 0.1:
             print("bad academic performance")
-            self.alive = True
-        elif self.academic_performance > 9:
-            print("high academic performance")
             self.alive = True
 
     def end_of_day(self):
@@ -58,17 +58,19 @@ class Student:
     def life(self, day):
         day = " Day " + str(day) + " of " + "life " + self.name
         print(f"{day:=^50}")
-        life_cube = random.randint(1, 3)
+        life_cube = random.randint(1, 4)
         if life_cube == 1:
             self.to_study()
         elif life_cube == 2:
             self.to_sleep()
         elif life_cube == 3:
             self.to_chill()
+        elif life_cube == 4:
+            self.to_job()
         self.end_of_day()
         self.is_alive()
 
-nick = Student("Dmitriy ")
+nick = Student("Dmitriy")
 
 for day in range(365):
     if nick.alive == False:
