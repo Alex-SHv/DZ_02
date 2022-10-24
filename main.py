@@ -11,7 +11,7 @@ class Student:
         self.academic_performance = 0
         self.alive = True
 
-    def to_progarmming(self):
+    def to_study(self):
         print("Time to study")
         self.progress += 0.5
         self.gladness -= 3
@@ -60,7 +60,7 @@ class Student:
         print(f"{day:=^50}")
         life_cube = random.randint(1, 3)
         if life_cube == 1:
-            self.to_progarmming()
+            self.to_study()
         elif life_cube == 2:
             self.to_sleep()
         elif life_cube == 3:
