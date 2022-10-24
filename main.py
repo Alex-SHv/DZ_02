@@ -1,7 +1,7 @@
 import random
 
 
-class Programmer:
+class Student:
 
     def __init__(self, name):
         self.name = name
@@ -12,18 +12,18 @@ class Programmer:
         self.alive = True
 
     def to_progarmming(self):
-        print("Time for working!")
+        print("Time to study")
         self.progress += 0.5
         self.gladness -= 3
         self.money += 600
         self.academic_performance = 0.4
 
     def to_sleep(self):
-        print("I will to sleep")
+        print("I will sleep")
         self.gladness += 5
 
     def to_chill(self):
-        print("Time relax")
+        print("Rest time")
         self.gladness += 4
         self.progress -= 0.2
         self.money -= 300
@@ -31,13 +31,13 @@ class Programmer:
 
     def is_alive(self):
         if self.progress < -0.1:
-            print("You fired")
+            print("Cast out...")
             self.alive = False
         elif self.gladness <= 1:
             print("Depression")
             self.alive = False
         elif self.progress >= 8:
-            print("Overload")
+            print("Passed externally...")
             self.alive = False
         elif self.money <= 0:
             print("Enough money")
@@ -68,7 +68,7 @@ class Programmer:
         self.end_of_day()
         self.is_alive()
 
-nick = Programmer("Dmitriy ")
+nick = Student("Dmitriy ")
 
 for day in range(365):
     if nick.alive == False:
