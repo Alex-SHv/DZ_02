@@ -52,6 +52,8 @@ class Programmer:
     def end_of_day(self):
         print(f"Gladness = {self.gladness}")
         print(f"Progress = {round(self.progress, 2)}")
+        print(f"Money = {round(self.money, 2)}")
+        print(f"Academic Performance = {round(self.academic_performance, 2)}")
 
     def life(self, day):
         day = " Day " + str(day) + " of " + "life " + self.name
